@@ -1,0 +1,240 @@
+
+
+html {
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat';
+}
+h1{
+    font-size: 50px;
+    font-family:Audiowide;
+}
+p{
+    font-size: 24px;
+    line-height: 50px;
+}
+.navbar{    
+    /* overflow: hidden;     */
+    font-family: century gothic;      
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 70px;
+    z-index: 1;
+}
+.nav{
+    display: flex;
+    justify-content: right;
+    list-style: none;
+    margin-right: 5%;
+}
+
+.logo {
+    flex: 1 1 auto;
+    margin-left: 0%;
+    size: 150px;
+}
+img{
+    width:38%;
+}
+a{
+    margin: 10px;
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+a:hover{
+    color: #000;
+}
+.banner-area{
+    position: relative;
+    background-image:  linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2)),url(bgimg.jpg);
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+      /* Add the blur effect */
+      filter: blur(8px);
+      -webkit-filter: blur(2px);
+}
+.bg-text {
+    
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.6); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #dc2d2c;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+  }
+.about-area, .port-area, .service-area, .contact-area{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    height: 700px;
+}
+.contact-area{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    height: 1000px;
+}
+.text-part{
+    width: 65%;
+    height: 80%;
+}        
+.about-area{
+    background-color: #fefefe;
+}
+.port-area{
+    background-color: #262626;
+    color: #fff;
+}
+.service-area{
+    background-color: #fefefe;
+}
+.contact-area{
+    background-color: #262626;
+    color: #fff;
+}
+
+ul{
+    list-style-type: none;
+    float: right;
+    margin-top: 20px;
+}
+
+ul li{
+    display: inline-block;
+}
+
+ul li a{
+    text-decoration: none;
+    font-weight: bolder;
+    color: #dc2d2c;
+    padding: 7px 12px;
+    border: 2px solid transparent;
+    transition: 0.5s ease-in-out;
+}
+
+ul li a:hover{
+    background-color:#ffffff;
+    color:  #3abaae;
+}
+
+.right-bar {
+    position: fixed;
+    width: 50px;
+    height: 100%;
+    background: rgba(0, 0, 0, .8);
+    top: 0%;
+    right: 0%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .icons {
+    position: absolute;
+    bottom:70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  
+  .icon-btn {
+    margin-top: 20px;
+    background: white;
+    text-decoration: none;
+    color: #dc2d2c;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    position: relative;
+  }
+  
+  .icon-btn i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+/*footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 60px;
+    color: #fff;
+    font-size: 5px;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 999; 
+}
+footer a:hover{
+    color: #dc2d2c;
+}
+
+}
+footer p {
+    margin: 0px 0;
+}
+
+footer i {
+    color: red;
+}
+
+footer a {
+    color: #3c97bf;
+    text-decoration: none;
+}*/
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 50px;
+    color: #fff;
+    font-size: 14px;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 999;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer i {
+    color: red;
+}
+
+footer a {
+    color: #3c97bf;
+    text-decoration: none;
+}
+footer a:hover{
+    color: #dc2d2c;
+}

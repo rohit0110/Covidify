@@ -1,0 +1,14 @@
+-Instead of diff Map and Plots tab we will have one common Dashboard tab, take inspiration from 
+https://www.zoho.com/covid/fork-this.html   https://www.zoho.com/covid/
+-About us tab will contain cool css wave effect and two round circles with cool photos of creators
+-covid-19 game from codepen https://codepen.io/faisal-jawed/pen/NWqeRNZ
+-make the website relative(relative layout, components and shit)
+-top 5 news articles will also be displayed in the Dashboard page after theuser chooses a region from dropdown
+
+
+latest to-do :
+-implement about the creators section in main website
+
+Total cases steal from table.js
+keep it in the scroll down format that is like About us
+Above tech
