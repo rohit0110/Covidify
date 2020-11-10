@@ -8,12 +8,16 @@ const deaths_element = document.querySelector(".deaths .value");
 const new_deaths_element = document.querySelector(".deaths .new-value");
 
 const ctx = document.getElementById("axes_line_chart").getContext("2d");
+// const ctx1= document.getElementById("axes_line_chart2").getContext("2d");
 
 // APP VARIABLES
 let app_data = [],
   cases_list = [],
+  cases_each_day = [],
   recovered_list = [],
+  recovered_each_day = [],
   deaths_list = [],
+  deaths_each_day = [],
   deaths = [],
   formatedDates = [];
 
@@ -32,6 +36,9 @@ function fetchData(country) {
 
   (cases_list = []),
     (recovered_list = []),
+    (recovered_each_day = []),
+    (deaths_each_day = []),
+    (cases_each_day = []),
     (deaths_list = []),
     (dates = []),
     (formatedDates = []);
@@ -98,6 +105,7 @@ fetchData(user_country);
 function updateUI() {
   updateStats();
   axesLinearChart();
+  // axesLinearChart2();
 }
 
 function updateStats() {
@@ -123,6 +131,19 @@ function updateStats() {
   dates.forEach((date) => {
     formatedDates.push(formatDate(date));
   });
+  var i=1;
+  cases_each_day.push(cases_list[0]);
+  for(i=1;i<cases_list.length;i++) {
+    cases_each_day.push(cases_list[i]-cases_list[i-1]);
+  }
+  recovered_each_day.push(recovered_list[0]);
+  for(i=1;i<recovered_list.length;i++) {
+    recovered_each_day.push(recovered_list[i]-recovered_list[i-1]);
+  }
+  deaths_each_day.push(deaths_list[0]);
+  for(i=1;i<deaths_list.length;i++) {
+    deaths_each_day.push(deaths_list[i]-deaths_list[i-1]);
+  }
 }
 
 // UPDATE CHART
@@ -145,6 +166,14 @@ function axesLinearChart() {
           borderWidth: 1,
         },
         {
+          label: "Cases Each Day",
+          data: cases_each_day,
+          fill: false,
+          borderColor: "#0eaaec",
+          backgroundColor: "#0eaaec",
+          borderWidth: 1,
+        },
+        {
           label: "Recovered",
           data: recovered_list,
           fill: false,
@@ -153,11 +182,27 @@ function axesLinearChart() {
           borderWidth: 1,
         },
         {
+          label: "Recovered Each Day",
+          data: recovered_each_day,
+          fill: false,
+          borderColor: "#13EA7D",
+          backgroundColor: "#13EA7D",
+          borderWidth: 1,
+        },
+        {
           label: "Deaths",
           data: deaths_list,
           fill: false,
           borderColor: "#FA0813",
           backgroundColor: "#FA0813",
+          borderWidth: 1,
+        },
+        {
+          label: "Deaths Each Day",
+          data: deaths_each_day,
+          fill: false,
+          borderColor: "#EA8513",
+          backgroundColor: "#EA8513",
           borderWidth: 1,
         },
       ],
@@ -169,6 +214,48 @@ function axesLinearChart() {
     },
   });
 }
+
+// let my_chart2;
+// function axesLinearChart2() {
+//   if (my_chart2) {
+//     my_chart2.destroy();
+//   }
+// console.log([cases_each_day.length,cases_list.length]);
+//   my_chart2 = new Chart(ctx1, {
+//     type: "doughnut",
+//     data: {
+//       datasets: [{
+//         data:[cases_list[cases_list.length-1]-(recovered_list[recovered_list.length-1] + deaths_list[deaths_list.length-1]),recovered_list[recovered_list.length-1],deaths_list[deaths_list.length-1]],
+//       backgroundColor: [
+//         "#FFF",
+//         "#0DFA08",
+//         "#FA0813",
+//       ],
+//       borderColor:[
+//         "#0eaaec",
+//         "#0DFA08",
+//         "#FA0813",
+//       ]
+//       }],
+//       labels: [
+//         'Active Cases',
+//         'Recovered',
+//         'Deaths',
+//       ],
+//     },
+//     options: {
+//       layout: {
+//           padding: {
+//               left: 50,
+//               right: 0,
+//               top: 0,
+//               bottom: 0
+//           }
+//       }
+//       // animateRotate: true
+//   }
+//   });
+// }
 
 // FORMAT DATES
 const monthsNames = [
