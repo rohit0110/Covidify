@@ -36,10 +36,10 @@ header{
 .logo{
     display: flex;
     align-items: center;
-    padding-left: 20px;
+    padding-left: 5px;
 }
 .logo img{
-    width: 60px;
+    width:200px;
 }
 .logo p {
     font-weight: bold;
@@ -68,7 +68,7 @@ header{
     display: flex;
     justify-content: right;
     list-style: none;
-    margin-right: 5%;
+    margin-right: 2%;
 }
 
 nav ul{
@@ -140,7 +140,7 @@ a:hover{
     flex-wrap: wrap;
     flex-direction: row;
     width: 100%;
-    height: 700px;
+    height: 710px;
 }
 .graph-area{
     position: relative;
@@ -150,7 +150,7 @@ a:hover{
     flex-wrap: wrap;
     flex-direction: row;
     width: 100%;
-    height: 700px;
+    height: 710px;
 }
 .contact-area{
     position: absolute;
@@ -194,9 +194,24 @@ a:hover{
     background-color: #262626
 }
 .port-area{
-    background-color: #696767;
-    color: #fff;
+    background-color: #262626;
+    color: #fff;  
 }
+
+ol {
+    font-size: 27px;
+    list-style: none;
+    counter-reset: my-awesome-counter;
+ }
+ol li {
+     counter-increment: my-awesome-counter;  
+}
+ol li::before {
+    content: counter(my-awesome-counter) ". ";
+    color: #dc2d2c;
+    font-weight: bold;
+}
+
 .service-area{
     background-color: #fefefe;
 }
